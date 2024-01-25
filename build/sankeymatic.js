@@ -1677,7 +1677,7 @@ function render_sankey(allNodes, allFlows, cfg, numberStyle) {
       .attr('font-size', `${mSize}px`)
       .attr('font-weight', '400')
       .attr('fill', mColor)
-      .text('Made at SankeyMATIC.com');
+      .text('By Eth Wave - GardenofThings.com --- Forked from SankeyMATIC.com');
   }
 
   if (cfg.labelname_appears || cfg.labelvalue_appears) {
