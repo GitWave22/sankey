@@ -293,8 +293,8 @@ Total Burned [94486] MEV
 
 <p class="form_elements3 grid_entire_row">
 <strong>Arrange the diagram:</strong><br />
-<span><input name="layout_order" id="layout_order_automatic" value="automatic" type="radio" onchange="process_sankey();" class="spaced_checkbox" /><label for="layout_order_automatic" class="ropt">Automatically</label></span>
-<span><input name="layout_order" id="layout_order_exact" value="exact" type="radio" onchange="process_sankey();" checked="checked" /><label for="layout_order_exact" class="ropt">Using the exact input order</label></span>
+<span><input name="layout_order" id="layout_order_automatic" value="automatic" type="radio" onchange="process_sankey();" checked="checked" /><label for="layout_order_automatic" class="ropt">Automatically</label></span>
+<span><input name="layout_order" id="layout_order_exact" value="exact" type="radio" onchange="process_sankey();" class="spaced_checkbox" /><label for="layout_order_exact" class="ropt">Using the exact input order</label></span>
 </p>
 </div>
 
@@ -349,7 +349,7 @@ Labels<span id="label_options_hint">...</span></h2>
 <span class="no_wrap"><input name="labels_fontface" type="radio" id="serif" value="serif" onchange="process_sankey();" /><label for="serif" class="ropt font_serif">serif</label></span>
 <span class="no_wrap"><input name="labels_fontface" type="radio" id="monospace" value="monospace" onchange="process_sankey();" /><label for="monospace" class="ropt font_mono">mono</label></span>
 </span>
-<span><label for="labels_color"><strong>Color:</strong></label> <input type="color" id="labels_color" size="7" maxlength="7" value="#000000" onchange="process_sankey();"></span>
+<span><label for="labels_color"><strong>Color:</strong></label> <input type="color" id="labels_color" size="7" maxlength="7" value="#B8B8B8" onchange="process_sankey();"></span>
 </div>
 
 <details open><summary><strong>Sizes</strong></summary>
@@ -616,8 +616,8 @@ Flows<span id="flow_options_hint">:</span></h2>
 Use <input name="flow_inheritfrom" type="radio" id="flow_inherit_none" value="none" onchange="process_sankey();" /><label for="flow_inherit_none" class="ropt">one color:</label>
 
 <input type="color" id="flow_color" title="Single Flow Color" size="7" maxlength="7" value="#999999" onchange="checkRadio('flow_inherit_none'); process_sankey();" /> or colors from:<br />
-<span class="no_wrap"><input name="flow_inheritfrom" type="radio" id="flow_inherit_from_source" value="source" onchange="process_sankey();" /><label class="ropt" for="flow_inherit_from_source">each flow's Source</label></span>
-<span class="no_wrap"><input name="flow_inheritfrom" type="radio" id="flow_inherit_from_target" value="target" onchange="process_sankey();" checked="checked" /><label class="ropt" for="flow_inherit_from_target">each flow's Target</label></span>
+<span class="no_wrap"><input name="flow_inheritfrom" type="radio" id="flow_inherit_from_source" value="source" onchange="process_sankey();" checked="checked" /><label class="ropt" for="flow_inherit_from_source">each flow's Source</label></span>
+<span class="no_wrap"><input name="flow_inheritfrom" type="radio" id="flow_inherit_from_target" value="target" onchange="process_sankey();" /><label class="ropt" for="flow_inherit_from_target">each flow's Target</label></span>
 <br />
 <span class="no_wrap"><input name="flow_inheritfrom" type="radio" id="flow_inherit_outside_in" value="outside-in" onchange="process_sankey();" /><label class="ropt" for="flow_inherit_outside_in">the outermost nodes (flowing in)</label></span>
 </div>
@@ -751,7 +751,7 @@ Diagram Size &amp; Background<span id="diagram_options_hint">:</span></h2>
 <input id="size_h" type="number" class="wholenumber number_10000s" min="40" value="1800" step="2" onchange="process_sankey();"></span>
 
 <label for="bg_color" class="spaced_label"><strong>Background Color:</strong></label>
-<input type="color" id="bg_color" size="7" maxlength="7" value="#FFFFFF" onchange="process_sankey();">
+<input type="color" id="bg_color" size="7" maxlength="7" value="#1e222d" onchange="process_sankey();">
 <input type="checkbox" id="bg_transparent" value="1" onchange="process_sankey();" class="spaced_checkbox"><label for="bg_transparent" class="ropt">Transparent</label><br />
 </p>
 
