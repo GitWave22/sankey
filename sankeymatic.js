@@ -2569,3 +2569,60 @@ glob.process_sankey();
  reMoveLine movesMarker
  reFlowTargetWithSuffix reColorPlusOpacity
  reBareColor reRGBColor LZString */
+
+// // Select all flows and nodes
+// const allElements = document.getElementById('sankey_flows').querySelectorAll('path')
+// // Add touchstart event listener
+// allElements.forEach((element) => {
+//   element.addEventListener('click', handleTap);
+// });
+
+
+
+// function handleTap(event) {
+//   const touchedElement = event.target; // The touched flow or node
+//   theTitle = touchedElement.querySelector('title')
+//   const tooltip = document.getElementById('tooltip');
+
+//   // Calculate position relative to the viewport
+//   const { clientX, clientY } = event;
+
+
+//   // Set tooltip position
+//   tooltip.style.left = `${clientX}px`;
+//   tooltip.style.top = `${clientY-100}px`;
+
+//   // Show the tooltip content (e.g., flow value or node name)
+//   tooltip.textContent = theTitle.textContent;
+//   tooltip.style.display = 'block'; // Show the tooltip
+// }
+
+
+// Select all flows and nodes
+const allElements = document.getElementById('sankey_flows').querySelectorAll('path')
+// Add touchstart event listener
+allElements.forEach((element) => {
+  element.addEventListener('touchstart', handleTap);
+});
+
+
+
+function handleTap(event) {
+  const touchedElement = event.target; // The touched flow or node
+  theTitle = touchedElement.querySelector('title')
+  const tooltip = document.getElementById('tooltip');
+
+  // Calculate position relative to the viewport
+  const x = event.touches[0].clientX;
+  const y = event.touches[0].clientY;
+
+  console.log("fire")
+
+  // Set tooltip position
+  tooltip.style.left = `${X}px`;
+  tooltip.style.top = `${Y-100}px`;
+
+  // Show the tooltip content (e.g., flow value or node name)
+  tooltip.textContent = theTitle.textContent;
+  tooltip.style.display = 'block'; // Show the tooltip
+}
