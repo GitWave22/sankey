@@ -1055,3 +1055,12 @@ fieldset.simple {
 
   .footer__nav ul li { margin: 0.3em; }
 }
+
+
+.tooltip {
+  background-color: #ffffff25;
+  padding: 10px;
+  border-radius: 10px;
+  font-style: oblique;
+  display: none;
+}

@@ -2602,27 +2602,55 @@ glob.process_sankey();
 const allElements = document.getElementById('sankey_flows').querySelectorAll('path')
 // Add touchstart event listener
 allElements.forEach((element) => {
-  element.addEventListener('touchstart', handleTap);
+  element.addEventListener('touchend', handleTap);
 });
 
+var timer = null;
 
+sankeyLabelsListTouch = document.getElementById('sankey_labels').childNodes
+
+toFromTouch = []
 
 function handleTap(event) {
+  toFromTouch = []
+  // event.preventDefault();
+  for (i = 0; i < allElements.length; i++) {
+    allElements[i].style.opacity = '0.45';
+  }
+  this.style.opacity = '0.725';
   const touchedElement = event.target; // The touched flow or node
+  if (timer) {
+    clearTimeout(timer);
+    timer = null;
+  }
   theTitle = touchedElement.querySelector('title')
   const tooltip = document.getElementById('tooltip');
-
-  // Calculate position relative to the viewport
-  const x = event.touches[0].clientX;
-  const y = event.touches[0].clientY;
-
-  console.log("fire")
+  const x = event.changedTouches[0].pageX;
+  const y = event.changedTouches[0].pageY;
 
   // Set tooltip position
-  tooltip.style.left = `${X}px`;
-  tooltip.style.top = `${Y-100}px`;
+  tooltip.style.left = `${x - 35}px`;
+  tooltip.style.top = `${y - 35}px`;
 
   // Show the tooltip content (e.g., flow value or node name)
   tooltip.textContent = theTitle.textContent;
   tooltip.style.display = 'block'; // Show the tooltip
+  hideTapTipCount = true
+  for (i = 0; i < sankeyLabelsListTouch.length; i++) {
+    if (sankeyLabelsListTouch[i].textContent.length > 1) {
+      sankeyLabelsListTouch[i].style.fill = "unset";
+      if (this.textContent.includes(sankeyLabelsListTouch[i].textContent)) {
+        toFromTouch.push(i)
+        sankeyLabelsListTouch[i].style.fill = '#603';
+      }
+    }
+  }
+  timer = setTimeout(hideTapTip, 3000);
+}
+
+function hideTapTip() {
+  tooltip.style.display = 'none'
+  for (i = 0; i < toFromTouch.length; i++) {
+    sankeyLabelsListTouch[toFromTouch[i]].style.fill = "unset";
+  }
 }
