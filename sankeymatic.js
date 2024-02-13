@@ -2641,7 +2641,7 @@ function handleTap(event) {
       sankeyLabelsListTouch[i].style.fill = "unset";
       if (this.textContent.includes(sankeyLabelsListTouch[i].textContent)) {
         toFromTouch.push(i)
-        sankeyLabelsListTouch[i].style.fill = '#603';
+        sankeyLabelsListTouch[i].style.fill = '#f0ff00';
       }
     }
   }
