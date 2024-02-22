@@ -131,4 +131,7 @@
   .disclaimer {
     height: 80px;
   }
+  .sponsor-text {
+    font-size: smaller;
+    height: 10px;
 }
