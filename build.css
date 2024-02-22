@@ -1065,3 +1065,28 @@ fieldset.simple {
   display: none;
   user-select: none;
 }
+
+.sourceListCont {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+}
+
+.sourceList {
+  margin: 10px;
+  border-radius: 10px;
+  border: white solid 1px;
+  padding: 10px;
+  color: white;
+  line-height: 25px;
+}
+
+.sourceCat {
+  min-width: 350px;
+  border: dashed 1px;
+  text-align: center;
+}
+
+.sourceShift {
+  margin-left: 20px;
+  max-width: 1680px;
+}
