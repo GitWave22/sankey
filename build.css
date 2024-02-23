@@ -1090,3 +1090,8 @@ fieldset.simple {
   margin-left: 20px;
   max-width: 1680px;
 }
+
+.page-title-cont h1{
+  margin-left: 20px;
+  color: white;
+}

@@ -3,7 +3,7 @@
   max-height: 330px;
   aspect-ratio: 1230/330;
   padding: 10px;
-  background-color: #000000;
+  background-color: #004477;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 20px 1fr 1fr;
@@ -106,6 +106,19 @@
   }
 }
 
+.donatePlzCont {
+  max-width: 1720px;
+  display: grid;
+  place-items: center;
+}
+
+.donatePlz {
+  font-size: x-large;
+  text-align: center;
+  background-color: #004477;
+  width: 660px;
+}
+
 @media (max-width:800px) {
   .sponsor {
     max-width: unset;
@@ -134,4 +147,10 @@
   .sponsor-text {
     font-size: smaller;
     height: 10px;
+  }
+  .donatePlz {
+    font-size: large;
+    width: unset;
+    padding: 10px;
+  }
 }
