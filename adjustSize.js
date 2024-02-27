@@ -8,13 +8,14 @@ function urlPramChanger() {
 	console.log(sponsorTextWidth)
 	sponsorText = document.querySelectorAll('.resizeSankey');
 	console.log(sponsorText)
-	sponsorTextWidth = sponsorTextWidth+'px'
+	sponsorTextWidths = sponsorTextWidth+'px'
 	if (sponsorText.length > 0) {
-	    if (sponsorText[0]) sponsorText[0].style.width = sponsorTextWidth;
-	    if (sponsorText[1]) sponsorText[1].style.width = sponsorTextWidth;
-	    if (sponsorText[2]) sponsorText[2].style.width = sponsorTextWidth;
+	    if (sponsorText[0]) sponsorText[0].style.width = sponsorTextWidths;
+	    if (sponsorText[1]) sponsorText[1].style.width = sponsorTextWidths;
+	    if (sponsorText[2]) sponsorText[2].style.width = sponsorTextWidths;
 		badge = document.querySelector('.badge');
 		if (sponsorTextWidth < 1250) {
+			console.log("yes")
 			badge.classList.toggle('badge-small', true)
 		} else {
 			badge.classList.toggle('badge-small', false)
