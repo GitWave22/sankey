@@ -5,13 +5,11 @@
 function urlPramChanger() {
 	let params = new URLSearchParams(window.location.search);
 	let sponsorTextWidth = params.get('sponsorTextWidth');
-
-	let sponsorText = document.querySelector('.sponsor-text');
-	sponsorText.style.width = sponsorTextWidth+'px';
-
-	let sourceList = document.querySelectorALL('.sourceList');
-	sourceList[0].style.width = sponsorTextWidth+'px';
-	sourceList[1].style.width = sponsorTextWidth+'px';
+	console.log(sponsorTextWidth)
+	let sponsorText = document.querySelectorAll('.resizeSankey');
+	sponsorText[0].style.width = sponsorTextWidth+'px';
+	sponsorText[1].style.width = sponsorTextWidth+'px';
+	sponsorText[2].style.width = sponsorTextWidth+'px';
 
 	badge = document.querySelector('.badge');
 
