@@ -13,6 +13,7 @@ function urlPramChanger() {
 	    if (sponsorText[0]) sponsorText[0].style.width = sponsorTextWidths;
 	    if (sponsorText[1]) sponsorText[1].style.width = sponsorTextWidths;
 	    if (sponsorText[2]) sponsorText[2].style.width = sponsorTextWidths;
+	    if (sponsorText[3]) sponsorText[3].style.width = sponsorTextWidths;
 		badge = document.querySelector('.badge');
 		if (sponsorTextWidth < 1250) {
 			console.log("yes")
