@@ -49,6 +49,7 @@ function urlPramChanger() {
 	}
 }
 
-urlPramChanger()
 urlPramChanger = urlPramChanger()
 window.addEventListener('popstate', urlPramChanger)
+
+setTimeout(urlPramChanger, 1000)
