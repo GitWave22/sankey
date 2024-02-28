@@ -29,7 +29,7 @@ window.addEventListener('message', (event) => {
 			donatePlz = document.querySelector('.donatePlz');
 			if (sponsorTextWidth < 800) {
 				sponsor.classList.toggle('sponsor-small', true)
-				sponcontain.classList.toggle('.spon-contain-small', true)
+				sponcontain.classList.toggle('spon-contain-small', true)
 				first.classList.toggle('first-small', true)
 				second.classList.toggle('second-small', true)
 				third.classList.toggle('third-small', true)
@@ -38,7 +38,7 @@ window.addEventListener('message', (event) => {
 				donatePlz.classList.toggle('donatePlz-small', true)
 			} else {
 				sponsor.classList.toggle('sponsor-small', false)
-				sponcontain.classList.toggle('.spon-contain-small', false)
+				sponcontain.classList.toggle('spon-contain-small', false)
 				first.classList.toggle('first-small', false)
 				second.classList.toggle('second-small', false)
 				third.classList.toggle('third-small', false)
