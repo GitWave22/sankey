@@ -3,6 +3,7 @@ window.addEventListener('message', (event) => {
 	if (isNaN(event.data)) {
     	console.log("nan test");
   	} else {
+  		console.log("R = " + event.data)
 		sponsorTextWidth = event.data;
 		sponsorText = document.querySelectorAll('.resizeSankey');
 		sponsorTextWidths = sponsorTextWidth+'px'
