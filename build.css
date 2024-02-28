@@ -1078,6 +1078,7 @@ fieldset.simple {
   padding: 10px;
   color: white;
   line-height: 25px;
+  word-wrap: break-word;
 }
 
 .sourceCat {
