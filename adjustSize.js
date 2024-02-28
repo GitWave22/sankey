@@ -12,7 +12,6 @@ window.addEventListener('message', (event) => {
 		    if (sponsorText[3]) sponsorText[3].style.width = sponsorTextWidths;
 			badge = document.querySelector('.badge');
 			if (sponsorTextWidth < 1250) {
-				console.log("yes")
 				badge.classList.toggle('badge-small', true)
 			} else {
 				badge.classList.toggle('badge-small', false)
