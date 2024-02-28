@@ -1,4 +1,4 @@
-urlPramChanger = urlPramChanger()
+
 window.addEventListener('message', (event) => {
 	if (isNaN(event.data)) {
     	console.log("nan test");
@@ -47,5 +47,6 @@ window.addEventListener('message', (event) => {
 			}
 		}
 	}
+})
 
 
