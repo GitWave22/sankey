@@ -2635,9 +2635,9 @@ function handleTap(event) {
   toFromTouch = []
   // event.preventDefault();
   for (i = 0; i < allElements.length; i++) {
-    allElements[i].style.opacity = '0.45';
+    allElements[i].style.opacity = '0.60';
   }
-  this.style.opacity = '0.725';
+  this.style.opacity = '0.8';
   const touchedElement = event.target; // The touched flow or node
   if (timer) {
     clearTimeout(timer);

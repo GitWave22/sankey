@@ -1068,7 +1068,7 @@ fieldset.simple {
 
 .sourceListCont {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
 .sourceList {
@@ -1081,7 +1081,6 @@ fieldset.simple {
 }
 
 .sourceCat {
-  min-width: 350px;
   border: dashed 1px;
   text-align: center;
 }
