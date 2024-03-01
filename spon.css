@@ -37,6 +37,7 @@
 }
 
 .sponsor-info-text {
+  max-width: 60vw;
   background-color: white;
   color: black;
   width: 300px;
