@@ -130,6 +130,7 @@
 .spon-contain-small {
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 2fr 1fr;
+  grid-row: 2;
 }
 .first-small {
   grid-column: 1 / span 2;
@@ -145,10 +146,12 @@
 }
 .disclaimer-small {
   height: 80px;
+  grid-row: -1;
 }
 .sponsor-text-small {
   font-size: smaller;
   height: 10px;
+  grid-row: 1;
 }
 .donatePlz-small {
   font-size: large;
