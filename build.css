@@ -1095,3 +1095,13 @@ fieldset.simple {
   margin-left: 20px;
   color: white;
 }
+
+#download_central {
+  display: block;
+  color: white;
+  border: unset;
+
+#share_button, #save_as_svg {
+  display: none;
+}
+
