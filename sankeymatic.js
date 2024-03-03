@@ -2614,7 +2614,7 @@ allElementsNodes = document.getElementById('sankey_nodes').querySelectorAll('.no
 for (i = 0; i < allElementsNodes.length; i++) {
   if (allElementsNodes[i].firstChild.firstChild.textContent.includes('\\n')) {
     boo = allElementsNodes[i].firstChild.firstChild.textContent;
-    blah = boo.replace('\\n', ' ');
+    blah = boo.replace(/\\n/g, ' ');
     allElementsNodes[i].firstChild.firstChild.textContent = blah;
   }
 }
@@ -2635,7 +2635,7 @@ function handleTap(event) {
   toFromTouch = []
   // event.preventDefault();
   for (i = 0; i < allElements.length; i++) {
-    allElements[i].style.opacity = '0.60';
+    allElements[i].style.opacity = '0.50';
   }
   this.style.opacity = '0.8';
   const touchedElement = event.target; // The touched flow or node
