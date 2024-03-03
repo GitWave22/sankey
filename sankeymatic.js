@@ -2604,7 +2604,7 @@ const allElements = document.getElementById('sankey_flows').querySelectorAll('pa
 for (i = 0; i < allElements.length; i++) {
   if (allElements[i].firstChild.textContent.includes('\\n')) {
     boo = allElements[i].firstChild.textContent;
-    blah = boo.replace('/\\n/g', ' ');
+    blah = boo.replace(/\\n/g, ' ');
     allElements[i].firstChild.textContent = blah;
   }
 }
