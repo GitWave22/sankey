@@ -2635,9 +2635,9 @@ function handleTap(event) {
   toFromTouch = []
   // event.preventDefault();
   for (i = 0; i < allElements.length; i++) {
-    allElements[i].style.opacity = '0.50';
+    allElements[i].style.opacity = '0.45';
   }
-  this.style.opacity = '0.8';
+  this.style.opacity = '0.725';
   const touchedElement = event.target; // The touched flow or node
   if (timer) {
     clearTimeout(timer);
@@ -2659,7 +2659,8 @@ function handleTap(event) {
   for (i = 0; i < sankeyLabelsListTouch.length; i++) {
     if (sankeyLabelsListTouch[i].textContent.length > 1) {
       sankeyLabelsListTouch[i].style.fill = "unset";
-      if (this.textContent.includes(sankeyLabelsListTouch[i].textContent)) {
+      noSpaceTest = this.textContent.replace(/ /g, '');
+      if (noSpaceTest.includes(sankeyLabelsListTouch[i].textContent)) {
         toFromTouch.push(i)
         sankeyLabelsListTouch[i].style.fill = '#f0ff00';
       }
