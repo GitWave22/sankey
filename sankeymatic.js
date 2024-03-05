@@ -2598,27 +2598,34 @@ glob.process_sankey();
 // }
 
 
-// Select all flows and nodes
 const allElements = document.getElementById('sankey_flows').querySelectorAll('path');
 
-for (i = 0; i < allElements.length; i++) {
-  if (allElements[i].firstChild.textContent.includes('\\n')) {
-    boo = allElements[i].firstChild.textContent;
-    blah = boo.replace(/\\n/g, ' ');
-    allElements[i].firstChild.textContent = blah;
+function handleTheNOne() {
+  allElementsn = document.getElementById('sankey_flows').querySelectorAll('path');
+  for (i = 0; i < allElementsn.length; i++) {
+    if (allElementsn[i].firstChild.textContent.includes('\\n')) {
+      boo = allElementsn[i].firstChild.textContent;
+      blah = boo.replace(/\\n/g, ' ');
+      allElementsn[i].firstChild.textContent = blah;
+    }
   }
 }
 
-allElementsNodes = document.getElementById('sankey_nodes').querySelectorAll('.node');
+handleTheNOne()
 
-for (i = 0; i < allElementsNodes.length; i++) {
-  if (allElementsNodes[i].firstChild.firstChild.textContent.includes('\\n')) {
-    boo = allElementsNodes[i].firstChild.firstChild.textContent;
-    blah = boo.replace(/\\n/g, ' ');
-    allElementsNodes[i].firstChild.firstChild.textContent = blah;
+
+function handleTheNTwo() {
+  allElementsNodes = document.getElementById('sankey_nodes').querySelectorAll('.node');
+  for (i = 0; i < allElementsNodes.length; i++) {
+    if (allElementsNodes[i].firstChild.firstChild.textContent.includes('\\n')) {
+      boo = allElementsNodes[i].firstChild.firstChild.textContent;
+      blah = boo.replace(/\\n/g, ' ');
+      allElementsNodes[i].firstChild.firstChild.textContent = blah;
+    }
   }
 }
 
+handleTheNTwo()
 
 // Add touchstart event listener
 allElements.forEach((element) => {
@@ -2676,3 +2683,50 @@ function hideTapTip() {
   }
 }
 
+function l2FilterFlow() {
+  document.getElementById("node_theme_none").checked = true;
+  process_sankey();
+  sankeyLabelsFlowsSwitch = document.getElementById('sankey_flows').childNodes
+  for (i = 0; i < sankeyLabelsFlowsSwitch.length; i++) {
+    if (sankeyLabelsFlowsSwitch[i].textContent.includes("L2")) {
+      sankeyLabelsFlowsSwitch[i].style.stroke = "#bcbd22"
+      withArrow = sankeyLabelsFlowsSwitch[i].textContent.split("→");
+      afterArrow = withArrow[1].trim()
+      withColon = afterArrow.split(":");
+      beforeColon = withColon[0].trim();
+      if (beforeColon != "L2") {
+        for (x = 0; x < sankeyLabelsFlowsSwitch.length; x++) {
+          if (sankeyLabelsFlowsSwitch[x].textContent.split("→")[1].trim().split(":")[0].trim() == beforeColon) {
+            sankeyLabelsFlowsSwitch[x].style.stroke = "#bcbd22";
+          }
+        }
+      }
+    }
+  }
+  handleTheNOne()
+  handleTheNTwo()
+}
+
+function stakedFilterFlow() {
+  document.getElementById("node_theme_none").checked = true;
+  process_sankey();
+  const sankeyLabelsFlowsSwitch = document.getElementById('sankey_flows').childNodes;
+  const hoper = [[], [], [], [], []];
+  const updateHoperAndStyle = (index, condition) => {
+    sankeyLabelsFlowsSwitch.forEach((node, i) => {
+      if (condition(node.textContent)) {
+        node.style.stroke = "rgb(0 171 255)";
+        if (window.getComputedStyle(node).fill != 'none') {
+          node.style.fill = "rgb(0 171 255)";
+        }
+        hoper[index].push(node.textContent.split("→")[1].trim().split(":")[0].trim());
+      }
+    });
+  };
+  updateHoperAndStyle(0, text => text.includes("Total\\nSupply → Staked"));
+  for (let i = 1; i < hoper.length; i++) {
+    updateHoperAndStyle(i, text => hoper[i - 1].includes(text.split("→")[0].trim()));
+  }
+  handleTheNOne();
+  handleTheNTwo();
+}
