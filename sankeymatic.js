@@ -2797,3 +2797,11 @@ function lostFilterFlow() {
   handleTheNOne();
   handleTheNTwo();
 }
+
+
+function noneFilterFlow() {
+  document.getElementById("theme_a_radio").checked = true;
+  process_sankey();
+  handleTheNOne();
+  handleTheNTwo();
+}
