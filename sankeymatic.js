@@ -2715,9 +2715,9 @@ function stakedFilterFlow() {
   const updateHoperAndStyle = (index, condition) => {
     sankeyLabelsFlowsSwitch.forEach((node, i) => {
       if (condition(node.textContent)) {
-        node.style.stroke = "rgb(0 171 255)";
+        node.style.stroke = "#bcbd22";
         if (window.getComputedStyle(node).fill != 'none') {
-          node.style.fill = "rgb(0 171 255)";
+          node.style.fill = "#bcbd22";
         }
         hoper[index].push(node.textContent.split("→")[1].trim().split(":")[0].trim());
       }
@@ -2726,6 +2726,57 @@ function stakedFilterFlow() {
   updateHoperAndStyle(0, text => text.includes("Total\\nSupply → Staked"));
   for (let i = 1; i < hoper.length; i++) {
     updateHoperAndStyle(i, text => hoper[i - 1].includes(text.split("→")[0].trim()));
+  }
+  handleTheNOne();
+  handleTheNTwo();
+}
+
+
+function cexFilterFlow() {
+  document.getElementById("node_theme_none").checked = true;
+  process_sankey();
+  const sankeyLabelsFlowsSwitch = document.getElementById('sankey_flows').childNodes;
+  const hoper = [[], []];
+
+  const updateHoperAndStyle = (index, condition) => {
+    sankeyLabelsFlowsSwitch.forEach((node, i) => {
+      if (condition(node.textContent)) {
+        node.style.stroke = "#bcbd22";
+        if (window.getComputedStyle(node).fill != 'none') {
+          node.style.fill = "#bcbd22";
+        }
+        hoper[index].push(node.textContent.split("→")[1].trim().split(":")[0].trim());
+      }
+    });
+  };
+  updateHoperAndStyle(0, text => text.includes("Total\\nSupply → CEX"));
+  updateHoperAndStyle(1, text => hoper[0].includes(text.split("→")[0].trim()));
+  hoper[0] = [];
+  updateHoperAndStyle(0, text => text.includes("Staked → CEXs"));
+  sankeyLabelsFlowsSwitch.forEach((node, i) => {
+    if (hoper[0].includes(node.textContent.split("→")[0].trim()) || hoper[1].includes(node.textContent.split("→")[0].trim())) {
+      node.style.stroke = "#bcbd22";
+      if (window.getComputedStyle(node).fill != 'none') {
+        node.style.fill = "#bcbd22";
+      }
+    }
+  });
+  handleTheNOne();
+  handleTheNTwo();
+}
+
+
+function GenesisWFilterFlow() {
+  document.getElementById("node_theme_none").checked = true;
+  process_sankey();
+  const sankeyLabelsFlowsSwitch = document.getElementById('sankey_flows').childNodes;
+  for (i = 0; i < sankeyLabelsFlowsSwitch.length; i++) {
+    if (sankeyLabelsFlowsSwitch[i].textContent.includes("Genesis\\nWallets")) {
+      sankeyLabelsFlowsSwitch[i].style.stroke = "#bcbd22";
+      if (window.getComputedStyle(sankeyLabelsFlowsSwitch[i]).fill != 'none') {
+        sankeyLabelsFlowsSwitch[i].style.fill = "#bcbd22";
+      }
+    }
   }
   handleTheNOne();
   handleTheNTwo();
