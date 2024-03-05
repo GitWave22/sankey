@@ -2689,7 +2689,7 @@ function l2FilterFlow() {
   sankeyLabelsFlowsSwitch = document.getElementById('sankey_flows').childNodes
   for (i = 0; i < sankeyLabelsFlowsSwitch.length; i++) {
     if (sankeyLabelsFlowsSwitch[i].textContent.includes("L2")) {
-      sankeyLabelsFlowsSwitch[i].style.stroke = "#bcbd22"
+      sankeyLabelsFlowsSwitch[i].style.stroke = "rgb(253 255 0)"
       withArrow = sankeyLabelsFlowsSwitch[i].textContent.split("→");
       afterArrow = withArrow[1].trim()
       withColon = afterArrow.split(":");
@@ -2697,7 +2697,7 @@ function l2FilterFlow() {
       if (beforeColon != "L2") {
         for (x = 0; x < sankeyLabelsFlowsSwitch.length; x++) {
           if (sankeyLabelsFlowsSwitch[x].textContent.split("→")[1].trim().split(":")[0].trim() == beforeColon) {
-            sankeyLabelsFlowsSwitch[x].style.stroke = "#bcbd22";
+            sankeyLabelsFlowsSwitch[x].style.stroke = "rgb(253 255 0)";
           }
         }
       }
@@ -2715,9 +2715,9 @@ function stakedFilterFlow() {
   const updateHoperAndStyle = (index, condition) => {
     sankeyLabelsFlowsSwitch.forEach((node, i) => {
       if (condition(node.textContent)) {
-        node.style.stroke = "#bcbd22";
+        node.style.stroke = "rgb(253 255 0)";
         if (window.getComputedStyle(node).fill != 'none') {
-          node.style.fill = "#bcbd22";
+          node.style.fill = "rgb(253 255 0)";
         }
         hoper[index].push(node.textContent.split("→")[1].trim().split(":")[0].trim());
       }
@@ -2741,9 +2741,9 @@ function cexFilterFlow() {
   const updateHoperAndStyle = (index, condition) => {
     sankeyLabelsFlowsSwitch.forEach((node, i) => {
       if (condition(node.textContent)) {
-        node.style.stroke = "#bcbd22";
+        node.style.stroke = "rgb(253 255 0)";
         if (window.getComputedStyle(node).fill != 'none') {
-          node.style.fill = "#bcbd22";
+          node.style.fill = "rgb(253 255 0)";
         }
         hoper[index].push(node.textContent.split("→")[1].trim().split(":")[0].trim());
       }
@@ -2755,9 +2755,9 @@ function cexFilterFlow() {
   updateHoperAndStyle(0, text => text.includes("Staked → CEXs"));
   sankeyLabelsFlowsSwitch.forEach((node, i) => {
     if (hoper[0].includes(node.textContent.split("→")[0].trim()) || hoper[1].includes(node.textContent.split("→")[0].trim())) {
-      node.style.stroke = "#bcbd22";
+      node.style.stroke = "rgb(253 255 0)";
       if (window.getComputedStyle(node).fill != 'none') {
-        node.style.fill = "#bcbd22";
+        node.style.fill = "rgb(253 255 0)";
       }
     }
   });
@@ -2772,9 +2772,25 @@ function GenesisWFilterFlow() {
   const sankeyLabelsFlowsSwitch = document.getElementById('sankey_flows').childNodes;
   for (i = 0; i < sankeyLabelsFlowsSwitch.length; i++) {
     if (sankeyLabelsFlowsSwitch[i].textContent.includes("Genesis\\nWallets")) {
-      sankeyLabelsFlowsSwitch[i].style.stroke = "#bcbd22";
+      sankeyLabelsFlowsSwitch[i].style.stroke = "rgb(253 255 0)";
       if (window.getComputedStyle(sankeyLabelsFlowsSwitch[i]).fill != 'none') {
-        sankeyLabelsFlowsSwitch[i].style.fill = "#bcbd22";
+        sankeyLabelsFlowsSwitch[i].style.fill = "rgb(253 255 0)";
+      }
+    }
+  }
+  handleTheNOne();
+  handleTheNTwo();
+}
+
+function lostFilterFlow() {
+  document.getElementById("node_theme_none").checked = true;
+  process_sankey();
+  const sankeyLabelsFlowsSwitch = document.getElementById('sankey_flows').childNodes;
+  for (i = 0; i < sankeyLabelsFlowsSwitch.length; i++) {
+    if (sankeyLabelsFlowsSwitch[i].textContent.includes("Lost")) {
+      sankeyLabelsFlowsSwitch[i].style.stroke = "rgb(253 255 0)";
+      if (window.getComputedStyle(sankeyLabelsFlowsSwitch[i]).fill != 'none') {
+        sankeyLabelsFlowsSwitch[i].style.fill = "rgb(253 255 0)";
       }
     }
   }
