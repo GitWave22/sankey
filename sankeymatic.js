@@ -2633,7 +2633,7 @@ function screenTapper() {
     element.addEventListener('touchend', handleTap);
   });
 }
-tapper()
+screenTapper()
 
 var timer = null;
 
