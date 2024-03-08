@@ -2629,7 +2629,8 @@ handleTheNTwo()
 
 // Add touchstart event listener
 function screenTapper() {
-  allElements.forEach((element) => {
+  allElementss = document.getElementById('sankey_flows').querySelectorAll('path');
+  allElementss.forEach((element) => {
     element.addEventListener('touchend', handleTap);
   });
 }
