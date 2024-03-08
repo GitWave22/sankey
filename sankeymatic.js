@@ -2628,9 +2628,12 @@ function handleTheNTwo() {
 handleTheNTwo()
 
 // Add touchstart event listener
-allElements.forEach((element) => {
-  element.addEventListener('touchend', handleTap);
-});
+function screenTapper() {
+  allElements.forEach((element) => {
+    element.addEventListener('touchend', handleTap);
+  });
+}
+tapper()
 
 var timer = null;
 
@@ -2705,6 +2708,7 @@ function l2FilterFlow() {
   }
   handleTheNOne()
   handleTheNTwo()
+  screenTapper()
 }
 
 function stakedFilterFlow() {
@@ -2729,6 +2733,7 @@ function stakedFilterFlow() {
   }
   handleTheNOne();
   handleTheNTwo();
+  screenTapper()
 }
 
 
@@ -2763,6 +2768,7 @@ function cexFilterFlow() {
   });
   handleTheNOne();
   handleTheNTwo();
+  screenTapper()
 }
 
 
@@ -2780,6 +2786,7 @@ function GenesisWFilterFlow() {
   }
   handleTheNOne();
   handleTheNTwo();
+  screenTapper()
 }
 
 function lostFilterFlow() {
@@ -2796,6 +2803,7 @@ function lostFilterFlow() {
   }
   handleTheNOne();
   handleTheNTwo();
+  screenTapper()
 }
 
 
@@ -2804,4 +2812,5 @@ function noneFilterFlow() {
   process_sankey();
   handleTheNOne();
   handleTheNTwo();
+  screenTapper()
 }
