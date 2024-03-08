@@ -781,7 +781,6 @@ Diagram Size &amp; Background<span id="diagram_options_hint">:</span></h2>
 </p>
 </div>
 </div>
-
 <!-- MOVING NODES -->
 <p id="reset_moves_area" class="form_elements1">
 Move Nodes by <em>dragging</em>. Double-click a Node to reset, or: <button type="button" id="reset_all_moved_nodes" onclick="resetMovesAndRender(); return false;">Reset all moved Nodes</button>
@@ -790,7 +789,35 @@ Move Nodes by <em>dragging</em>. Double-click a Node to reset, or: <button type=
   <div id="info_messages"></div>
   <div id="issue_messages"></div>
 </div>
-
+<div style="height: 0px;position: relative;top: 20px;left: 20px;width: 200px">
+  <fieldset style="border-radius: 10px;">
+  <legend style="color: white;background-color: unset;border-radius: 30px;padding: 5px 15px 5px 15px;font-size: 20px;">Filter: </legend>
+    <div>
+      <input type="radio" id="Show-All" name="sfilter" value="Show-All" checked onclick="noneFilterFlow()" />
+      <label for="Show-All" style="color: white;font-size: 15px;line-height: 25px;">Show All</label>
+    </div>
+    <div>
+      <input type="radio" id="Genesis-Wallets" name="sfilter" value="Genesis-Wallets" onclick="GenesisWFilterFlow()"/>
+      <label for="Genesis-Wallets" style="color: white;font-size: 15px;line-height: 25px;">Genesis Wallets</label>
+    </div>
+    <div>
+      <input type="radio" id="L2" name="sfilter" value="L2" onclick="l2FilterFlow()" />
+      <label for="L2" style="color: white;font-size: 15px;line-height: 25px;">L2</label>
+    </div>
+    <div>
+      <input type="radio" id="Staking" name="sfilter" value="Staking" onclick="stakedFilterFlow()" />
+      <label for="Staking" style="color: white;font-size: 15px;line-height: 25px;">Staking</label>
+    </div>
+    <div>
+      <input type="radio" id="CEX" name="sfilter" value="CEX" onclick="cexFilterFlow()" />
+      <label for="CEX" style="color: white;font-size: 15px;line-height: 25px;">CEX</label>
+    </div>
+    <div>
+      <input type="radio" id="Lost" name="sfilter" value="Lost" onclick="lostFilterFlow()" />
+      <label for="Lost" style="color: white;font-size: 15px;line-height: 25px;">Lost</label>
+    </div>
+  </fieldset> 
+</div>
 <p id="chart">
 <svg id="svg_scratch" height="600" width="600" xmlns="http://www.w3.org/2000/svg" class="hidden_under"></svg>
 <svg id="sankey_svg" height="600" width="600" xmlns="http://www.w3.org/2000/svg"></svg>
